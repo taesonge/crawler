@@ -20,7 +20,7 @@ console.log("검색 요청 시간 : ", date);
       .setChromeOptions(new chrome.Options().headless())
       .build();
     // Apply timeout for 10 seconds
-    await driver.manage().setTimeouts({ implicit: 10000 });
+    await driver.manage().setTimeouts({ implicit: 1000 });
 
     let class_lists = [
       "id", // 루리웹 글 번호
@@ -35,7 +35,7 @@ console.log("검색 요청 시간 : ", date);
 
     resultArray = [];
     for (let k = 1; k <= 2; k++) {
-      await driver.manage().setTimeouts({ implicit: 10000 });
+      await driver.manage().setTimeouts({ implicit: 1000 });
       await driver.get(
         "https://bbs.ruliweb.com/psp/board/1020&page=" + String(k)
       );
